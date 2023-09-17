@@ -1,0 +1,11 @@
+.container {
+    height: 200px;
+    width: 100%;
+    background-color: var(--gray-700);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    column-gap: 12px;
+}
