@@ -16,6 +16,13 @@
 
 }
 
+:focus {
+    outline: transparent;
+    box-shadow: 0 0 0 2px var(--purple-dark);
+    color: var(--gray-100);
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +32,7 @@
 
 body {
     -webkit-font-smoothing: antialiased;
+    background: var(--gray-600);
 }
 
 body, input, textarea, button {

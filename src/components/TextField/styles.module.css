@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+    column-gap: 8px;
+}
+
+.input {
+    width: 606px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-700);
+    background: var(--gray-500);
+   
+    padding: 16px;
+
+    color: var(--gray-300);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.button {
+    padding: 16px;
+    border-radius: 8px;
+    background: var(--blue-dark);
+    border: none;
+
+    color: var(--gray-100);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; 
+
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.button svg {
+    width: 1rem;
+    height: 1rem;
+}
