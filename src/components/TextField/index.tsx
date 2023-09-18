@@ -1,15 +1,41 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 
+import { useState } from 'react';
+import { TasksProps } from '../../App';
 import styles from './styles.module.css';
 import { PlusCircle } from 'phosphor-react';
 
-const TextField: React.FC = () => {
+interface Props {
+    setTasks: (a: TasksProps[]) => void;
+    tasks: TasksProps[];
+}
+
+const TextField = ({setTasks, tasks}: Props) => {
+  const [newTask, setNewTask] = useState('');
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function handleCreateTask(event: any) {
+        event?.preventDefault();
+        const idCount = tasks.length;
+        // @ts-ignore
+        const newTask = (event?.target.task.value)
+
+        setTasks([...tasks, { id: idCount + 1, description: newTask, status: 'Pending' }]);
+        setNewTask('');
+    }
   return(
-    <div className={styles.container}>
-        <input placeholder='Adicione uma nova tarefa' className={styles.input} />
-        <button className={styles.button}>Criar <PlusCircle weight='bold' /></button>
-    </div>
+    <form onSubmit={handleCreateTask}  className={styles.container}>
+        <input 
+        placeholder='Adicione uma nova tarefa' 
+        className={styles.input} 
+        name='task'
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+        />
+        <button type='submit' className={styles.button}>Criar <PlusCircle weight='bold' /></button>
+    </form>
   );
 }
 
 export default TextField;
+

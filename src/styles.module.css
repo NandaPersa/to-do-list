@@ -1,0 +1,81 @@
+.container {
+    width: 736px;
+    margin: 2rem auto;
+    margin-top: 65px;
+}
+
+.headerList {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.createdTask {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.createdTask p {
+    color: var(--blue);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.concludedTask {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.concludedTask p {
+    color: var(--purple);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.counter {
+    color: var(--gray-200);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    display: flex;
+    padding: 2px 8px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    border-radius: 999px;
+    background: var(--gray-400);
+}
+
+.tasksNotFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 64px;
+}
+
+.tasksNotFound p, strong {
+    color: var(--gray-300);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.tasksNotFound p {
+    font-weight: 400;
+}

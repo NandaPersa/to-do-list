@@ -5,10 +5,11 @@
     justify-content: center;
     margin-top: -30px;
     column-gap: 8px;
+    
 }
 
 .input {
-    width: 606px;
+    width: 645px;
     border-radius: 8px;
     border: 1px solid var(--gray-700);
     background: var(--gray-500);
@@ -20,6 +21,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+}
+
+.input:focus {
+    box-shadow: 0 0 0 2px var(--purple-dark);
+    color: #FFFFFF;
 }
 
 .button {
@@ -42,4 +48,9 @@
 .button svg {
     width: 1rem;
     height: 1rem;
+}
+
+.button:hover {
+    background-color: var(--blue);
+    
 }

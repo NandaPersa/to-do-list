@@ -6,10 +6,10 @@ import logo from '../../assets/todo.png'
 
 const Header: React.FC = () => {
   return (
-  <div className={styles.container}>
+  <form className={styles.container}>
     <img src={rocket} alt='rocket' />
     <img src={logo} alt='logo' />
-  </div>
+  </form>
   )
 }
 
