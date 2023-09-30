@@ -29,15 +29,14 @@ const TextField = ({setTasks, tasks}: Props) => {
     }
   return(
     <form onSubmit={handleCreateTask}  className={styles.container}>
-        <div>
           <input 
           placeholder='Adicione uma nova tarefa' 
           className={styles.input} 
           name='task'
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
+          autoComplete='off'
           />
-        </div>
         <button type='submit' className={styles.button}>Criar <PlusCircle weight='bold' /></button>
     </form>
   );

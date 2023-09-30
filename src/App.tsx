@@ -31,14 +31,14 @@ function App() {
       <TextField  setTasks={setTasks} tasks={tasks}/>
       <div className={styles.container}>
         <div className={styles.headerList}>
-        <div className={styles.createdTask}>
-          <p>Tarefas Criadas</p>
-          <span className={styles.counter}>{countTasks}</span>
-        </div>
-        <div className={styles.concludedTask}>
-          <p>Concluídas</p>
-          <span className={styles.counter}>{countTaskConcluded} de {countTasks}</span>
-        </div>
+          <div className={styles.createdTask}>
+            <p>Tarefas Criadas</p>
+            <span className={styles.counter}>{countTasks}</span>
+          </div>
+          <div className={styles.concludedTask}>
+            <p>Concluídas</p>
+            <span className={styles.counter}>{countTaskConcluded} de {countTasks}</span>
+          </div>
         </div>
         {tasks.length > 0 ? (
           tasks.map(item => (

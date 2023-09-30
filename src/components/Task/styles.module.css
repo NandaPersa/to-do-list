@@ -43,8 +43,8 @@
 
 .container svg {
     color: var(--gray-300);
-    width: 22px;
-    height: 24px;
+    min-width: 1.375rem;
+    min-height: 1.5rem;
 }
 
 .checkboxWrapper {

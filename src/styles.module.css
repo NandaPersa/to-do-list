@@ -1,7 +1,15 @@
 .container {
-    width: 736px;
+    width: 46rem;
     margin: 2rem auto;
     margin-top: 65px;
+
+    @media (max-width: 768px) {
+        width: 30rem;
+    };
+
+    @media (max-width: 500px) {
+        width: 22rem;
+    };
 }
 
 .headerList {
