@@ -19,6 +19,12 @@ const Task = ({item, setTasks, tasks}: Props) => {
 
         setTasks(newTasks)
     }
+
+    const handleDeleteTask = (id: number) => {
+        const newTasks = tasks.filter((task) => task.id !== id);
+        setTasks(newTasks);
+    }
+
   return (
     <div className={styles.container}>
         <div className={styles.checkboxWrapper}>
@@ -33,7 +39,7 @@ const Task = ({item, setTasks, tasks}: Props) => {
             )}
         </div>
         <p className={item.status === 'Pending' ? styles.description : styles.concluded}>{item.description}</p>
-        <Trash />
+        <Trash onClick={() => handleDeleteTask(item.id)} />
     </div>
   );
 }

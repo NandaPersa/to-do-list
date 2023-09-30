@@ -11,7 +11,8 @@ interface Props {
 }
 
 const TextField = ({setTasks, tasks}: Props) => {
-  const [newTask, setNewTask] = useState('');
+  const [newTask, setNewTask] = useState<string>('');
+  
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function handleCreateTask(event: any) {
@@ -19,19 +20,24 @@ const TextField = ({setTasks, tasks}: Props) => {
         const idCount = tasks.length;
         // @ts-ignore
         const newTask = (event?.target.task.value)
-
-        setTasks([...tasks, { id: idCount + 1, description: newTask, status: 'Pending' }]);
-        setNewTask('');
+        if(newTask) {
+          setTasks([...tasks, { id: idCount + 1, description: newTask, status: 'Pending' }]);
+          setNewTask('');
+      } else {
+        alert('O campo deve ser preechido');
+      }
     }
   return(
     <form onSubmit={handleCreateTask}  className={styles.container}>
-        <input 
-        placeholder='Adicione uma nova tarefa' 
-        className={styles.input} 
-        name='task'
-        value={newTask}
-        onChange={(e) => setNewTask(e.target.value)}
-        />
+        <div>
+          <input 
+          placeholder='Adicione uma nova tarefa' 
+          className={styles.input} 
+          name='task'
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+          />
+        </div>
         <button type='submit' className={styles.button}>Criar <PlusCircle weight='bold' /></button>
     </form>
   );
