@@ -11,11 +11,6 @@
     border: 1px solid var(--gray-400);
     background: var(--gray-500);
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
-
-}
-
-.container svg:hover {
-    color: var(--danger);
 }
 
 .container + .container {
@@ -23,60 +18,87 @@
 }
 
 .description {
-    width: 632px;
+    flex: 1;
     color: var(--gray-100);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 140%
+    line-height: 140%;
+    word-break: break-word;
 }
 
 .concluded {
-    width: 632px;
+    flex: 1;
     color: var(--gray-300);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
     text-decoration-line: line-through;
-}
-
-.container svg {
-    color: var(--gray-300);
-    min-width: 1.375rem;
-    min-height: 1.5rem;
+    word-break: break-word;
 }
 
 .checkboxWrapper {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
-.container input {
-    appearance: none; /* Remove o estilo padrão do sistema operacional */
-    -webkit-appearance: none; /* Para navegadores baseados no motor WebKit (como Safari) */
-    -moz-appearance: none; /* Para navegadores baseados no motor Gecko (como Firefox) */
-    width: 20px; /* Define a largura desejada do checkbox */
-    height: 20px; /* Define a altura desejada do checkbox */
-    border: 2px solid var(--blue-dark); /* Cor da borda azul */
-    border-radius: 50%; /* Torna o checkbox redondo */
-    outline: none; /* Remove a borda de foco padrão */
-    cursor: pointer; 
+.radioButton {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
-.container .checkboxWrapper svg {
-    color: var(--gray-300);
+.radioButton:hover {
+    background-color: rgba(30, 111, 159, 0.2);
+    border-color: var(--blue-dark);
+}
+
+.radioButton:checked {
+    background-color: var(--purple-dark);
+    border: 2px solid var(--purple-dark);
+}
+
+.radioButton:checked:hover {
+    background-color: var(--purple);
+    border: 2px solid var(--purple);
+}
+
+.checkIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--gray-100);
+    pointer-events: none;
     width: 12px;
     height: 12px;
-    position: absolute;
-    left: 4px;
-    top: 4px;
 }
 
-.container input:hover {
-    background-color: #10212A; /* Cor da borda azul */
+.trashIcon {
+    color: var(--gray-300);
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: color 0.2s;
 }
 
-.container input:checked {
-    background-color: var(--purple); /* Cor de fundo azul quando marcado */
-    border: 2px solid var(--purple); /* Cor da borda azul */
+.trashIcon:hover {
+    color: var(--danger);
 }

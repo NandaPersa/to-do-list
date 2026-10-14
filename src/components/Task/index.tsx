@@ -12,12 +12,13 @@ const Task = ({item, setTasks, tasks}: Props) => {
     const handleCheckboxChange = () => {
         const newTasks = tasks.map((taskItem) => {
             if(taskItem.id !== item.id) return taskItem;
-            const aux = item;
-            aux.status = taskItem.status === 'Pending' ? 'Concluded' : 'Pending'
-            return aux;
-        })
+            return {
+                ...taskItem,
+                status: (taskItem.status === 'Pending' ? 'Concluded' : 'Pending') as 'Concluded' | 'Pending'
+            };
+        });
 
-        setTasks(newTasks)
+        setTasks(newTasks);
     }
 
     const handleDeleteTask = (id: number) => {
@@ -31,15 +32,16 @@ const Task = ({item, setTasks, tasks}: Props) => {
             <input 
                 type='checkbox' 
                 name='checkbox' 
+                checked={item.status === 'Concluded'}
                 className={styles.radioButton}
                 onChange={handleCheckboxChange}
             />
             {item.status === 'Concluded' && (
-                <Check color='#FFFFFF' weight='bold' />
+                <Check className={styles.checkIcon} weight='bold' size={12} />
             )}
         </div>
         <p className={item.status === 'Pending' ? styles.description : styles.concluded}>{item.description}</p>
-        <Trash onClick={() => handleDeleteTask(item.id)} />
+        <Trash className={styles.trashIcon} size={24} onClick={() => handleDeleteTask(item.id)} />
     </div>
   );
 }
